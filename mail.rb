@@ -22,7 +22,7 @@ Mail.defaults do
 end
 
 Mail.deliver do
-       to 'charitakis.ioannis@gmail.com'
+       to '1epal-moiron-bots@googlegroups.com'
      from '"ο Server του ΕΠΑΛ Μοιρων" <1epalmoironmailer@gmail.com>'
   subject 'Αναφορά του server'
      body 'Παρακαλώ δείτε τα συννημμένα'
