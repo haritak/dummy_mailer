@@ -1,5 +1,5 @@
 require 'mail'
-load 'credentials.txt'
+load '/home/administrator/scripts/dummy_mailer/credentials.txt'
 
 raise "Required file missing" if ARGV.size<1
 raise "Paramereter not a file" if not File.exists?(ARGV[0])
@@ -22,9 +22,12 @@ Mail.defaults do
 end
 
 Mail.deliver do
-       to '1epal-moiron-bots@googlegroups.com'
-     from '"ο Server του ΕΠΑΛ Μοιρων" <1epalmoironmailer@gmail.com>'
-  subject 'Αναφορά του server'
-     body 'Παρακαλώ δείτε τα συννημμένα'
-     add_file ARGV[0]
+       to TO
+     from FROM
+  subject SUBJECT
+     body BODY
+
+     ARGV.each do |filename|
+       add_file filename
+     end
 end
